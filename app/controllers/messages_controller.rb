@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
     message = Message.new(message_params)
     message.user = current_user
     if message.save
-      ActionCable.server.broadcast 'chat_room',
+      ActionCable.server.broadcast 'chat_room_123',
         message: message.body,
         user: message.user.email
       head :ok
